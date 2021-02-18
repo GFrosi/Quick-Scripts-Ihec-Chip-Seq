@@ -16,20 +16,13 @@ def main():
     prefix_dir = 'lift_'
     counter = 0
     list_file = os.listdir(root_path)
-    #print(list_srr)
     path = os.path.join(root_path, prefix_dir + str(counter))
-    #create_dir(path)
 
     for index, lift in enumerate(list_file):
         if index % 20 == 0:
             counter += 1
             path = os.path.join(root_path, prefix_dir + str(counter))
             create_dir(path)
-
-        #if srr.endswith(".gz"):
-            #print('mv', srr, path)
-        #shutil.copy(os.path.join(root_path,lift), path)
-
 
 if __name__ == "__main__":
     main()
