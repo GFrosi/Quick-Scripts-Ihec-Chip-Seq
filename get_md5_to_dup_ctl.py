@@ -1,7 +1,8 @@
 import os
 import sys 
 
-'''Script to generate a .sh file to copy the desired files including the md5 checksum in their names to the destiny path'''
+'''Script to generate a .sh file to copy the desired files including
+the md5 checksum in their names to the destiny path'''
 
 def main():
 
@@ -26,7 +27,7 @@ def main():
         root_path = os.path.dirname(path)
         name = os.path.basename(path)
         new_name = name + '.md5'   
-        new_path = os.path.join(root_path,new_name
+        new_path = os.path.join(root_path,new_name)
 
         md5_name = open(new_path, 'r')
 

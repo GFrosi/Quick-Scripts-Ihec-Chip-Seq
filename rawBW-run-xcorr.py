@@ -2,7 +2,12 @@ import sys
 import os.path
 
 
-'''To run this script you should pass a list of bam files, list of fragment length and a string (suffix file). This script generates the run.sh files to be submitted to HPC. The program to be used is postprocess.sh. This program generates the rawBW files from bam files. The postprocess.sh could be downloaded in https://github.com/IHEC/integrative_analysis_chip/tree/dev-organize-output/encode-wrapper/postprocess'''
+'''To run this script you should pass a list of bam files, 
+list of fragment length and a string (suffix file). This 
+script generates the run.sh files to be submitted to HPC. 
+The program to be used is postprocess.sh. This program generates
+the rawBW files from bam files. The postprocess.sh could be downloaded
+in https://github.com/IHEC/integrative_analysis_chip/tree/dev-organize-output/encode-wrapper/postprocess'''
 
 '''If you do not want a new file name (just keep the original file name) you should to comment the follow lines:
 suffix = sys.argv[3]
@@ -23,7 +28,7 @@ command_line = """#!/bin/bash
 #SBATCH --mem=31G
 #SBATCH --job-name=""" + "Raw-Bigwig-fraglen" +  "\nmodule load java/1.8 mugqic/deepTools/2.5.3 samtools/1.5\n"
 
-print command_line
+print(command_line)
 
 for line, fraglen in zip(f_input, f_fraglen):
      
@@ -34,6 +39,6 @@ for line, fraglen in zip(f_input, f_fraglen):
      fn = fn + '-frag-' + fraglen + suffix
      fn = os.path.join(dir_name, fn)
 
-     print"\nbash /PATH-TO-POSTPROCESS.sh/postprocess.sh " , fn , " " , fraglen  
+     print("\nbash /PATH-TO-POSTPROCESS.sh/postprocess.sh " , fn , " " , fraglen)  
 
   

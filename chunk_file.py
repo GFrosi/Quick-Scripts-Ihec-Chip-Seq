@@ -1,11 +1,10 @@
 import sys
 
-'''script a file to chunck it into several files. The chunck will be made each 20 lines'''
+'''script a file to chunck it into several files. 
+The chunck will be made each 20 lines'''
 
 f_name = open(sys.argv[1], 'r') #path to file with all paths-to-file to chunk (in this case to liftover)
-
 counter = 0
-
 lines = []
 
 for line in f_name:
