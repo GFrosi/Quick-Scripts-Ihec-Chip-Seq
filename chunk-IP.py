@@ -2,6 +2,9 @@ import shutil
 import os
 import sys
 
+
+"create dir chuncks"
+
 def create_dir(path):
     try:
         os.mkdir(path)
